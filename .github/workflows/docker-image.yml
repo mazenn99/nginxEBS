@@ -46,7 +46,6 @@ jobs:
           --source-bundle S3Bucket="elasticbeanstalk-me-south-1-624445658885",S3Key="deployment/Dockerrun.aws.json" \
           --version-label "ver-${{ github.sha }}" \
           --description "commit-sha-${{ github.sha }}"
-          
 
       - name: Deploy new ElasticBeanstalk Application Version
         run: aws elasticbeanstalk update-environment --environment-name TestMoyasarApp --version-label "ver-${{ github.sha }}"
